@@ -1,0 +1,105 @@
+@import "./../Inter/Inter Web/inter.css";
+@import "./../IBM-Plex-Mono/ibm-plex.css";
+@import "./settings.css";
+
+/* 
+    Typography
+*/
+
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+@supports (font-variation-settings: normal) {
+    h1 {
+        font-weight: normal;
+        font-variation-settings: "wght" 800;
+    }
+}
+
+a {
+    color: var(--color-fg-link);
+}
+
+pre {
+    margin: 0;
+    padding: 0.5rem;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: var(--color-fg-muted);
+}
+
+button.only-icon {
+    appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem;
+    margin: 0.5rem;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--color-fg-muted);
+
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+button.only-icon:not(.selected):hover {
+    color: var(--color-fg-selected);
+    border-color: var(--color-border);
+}
+
+button.only-icon.selected {
+    color: var(--color-fg-selected);
+    background-color: var(--color-bg-level-2);
+    border-color: var(--color-border);
+}
+
+/* 
+    Common
+*/
+
+.container {
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    max-width: 52rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    padding: 0.5rem;
+    background-color: var(--color-bg-level-1);
+    border: var(--border);
+    border-radius: 1px;
+    min-height: 4rem;
+}
+
+select {
+    font-size: 1.125rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--color-bg-level-2);
+    border: var(--border);
+    color: var(--color-fg);
+    border-radius: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

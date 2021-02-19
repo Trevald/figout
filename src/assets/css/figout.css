@@ -1,0 +1,180 @@
+/*
+ * Base
+ */
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    box-sizing: border-box;
+}
+
+.frame:not(.horizontal, .vertical) {
+    background-color: red;
+}
+
+/*
+ * WRAPPERS
+ */
+
+body.frame {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*
+ * Direction
+ */
+
+.frame.horizontal {
+    flex-direction: row;
+}
+
+.frame.vertical {
+    flex-direction: column;
+}
+
+/*
+ * Distribution
+ */
+
+.frame.space-between {
+    justify-content: space-between;
+}
+
+.frame.packed {
+    justify-content: flex-start;
+}
+
+/*
+ * Alignment
+ */
+
+.frame.horizontal:not(.space-between).left,
+.frame.vertical:not(.space-between).top {
+    justify-content: flex-start;
+}
+
+.frame.horizontal:not(.space-between).center,
+.frame.vertical:not(.space-between).middle {
+    justify-content: center;
+}
+
+.frame.horizontal:not(.space-between).right,
+.frame.vertical:not(.space-between).bottom {
+    justify-content: flex-end;
+}
+
+.frame.horizontal.top,
+.frame.vertical.left {
+    align-items: flex-start;
+}
+
+.frame.horizontal.middle,
+.frame.vertical.center {
+    align-items: center;
+}
+
+.frame.horizontal.bottom,
+.frame.vertical.right {
+    align-items: flex-end;
+}
+
+/*
+ * Resizing : Hug content
+ */
+
+.frame.horizontal > .horizontal-hug-content {
+    flex: 0 1 auto;
+}
+
+.frame.vertical > .horizontal-hug-content {
+    align-self: auto;
+}
+
+.frame.horizontal > .vertical-hug-content {
+    flex: 0 1 auto;
+}
+
+.frame.vertical > .vertical-hug-content {
+    align-self: auto;
+}
+
+/*
+ * Resizing : Fill container
+ */
+
+.frame.horizontal > .horizontal-fill-container {
+    flex: 1 1 auto;
+}
+
+.frame.vertical > .horizontal-fill-container {
+    align-self: stretch;
+}
+
+.frame.horizontal > .vertical-fill-container {
+    align-self: stretch;
+}
+
+.frame.vertical > .vertical-fill-container {
+    flex: 1 1 auto;
+}
+
+/*
+ * Sizes
+ */
+
+.frame > .size-2 {
+    flex-basis: calc(100% / (12 / 2));
+    min-width: calc(100% / (12 / 2));
+}
+
+.frame > .size-4 {
+    flex-basis: calc(100% / (12 / 4));
+    min-width: calc(100% / (12 / 4));
+}
+
+.frame > .size-6 {
+    flex-basis: calc(100% / (12 / 6));
+    min-width: calc(100% / (12 / 6));
+}
+
+.frame > .size-8 {
+    flex-basis: calc(100% / (12 / 8));
+    min-width: calc(100% / (12 / 8));
+}
+
+.frame > .size-10 {
+    flex-basis: calc(100% / (12 / 10));
+    min-width: calc(100% / (12 / 10));
+}
+
+.frame > .size-12 {
+    flex-basis: calc(100% / (12 / 12));
+    min-width: calc(100% / (12 / 12));
+}
+
+/*
+ * Scrolling
+ */
+
+.frame .content {
+    flex: 1 1 auto;
+    display: block;
+    width: 100%;
+}
+
+.frame.vertical .vertical-fill-container .content {
+    height: 0;
+    overflow-y: auto;
+}
+
+.frame.horizontal .horizontal-fill-container .content {
+    overflow-x: auto;
+}
