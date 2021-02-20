@@ -18,7 +18,6 @@ export default {
 
     computed: {
         classList() {
-            console.log("classList", this.isSelected);
             const classList = ["icon", "frame", this.direction, this.distribution];
             if (this.isSelected) {
                 classList.push("selected");

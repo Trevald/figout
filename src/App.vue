@@ -5,13 +5,13 @@
             Human friendly layout helper. Inspired by
             <a href="#" target="figma">Figmas</a> auto-layout.
         </p>
-        {{ parentClassList }}
+
         <div class="sandbox">
             <Result
                 :parentClassList="parentClassList"
                 :childrenClassLists="childrenClassLists"
             />
-            <Settings @parentChange="parentChange" />
+            <Settings @parentChange="parentChange" @childrenChange="childrenChange" />
             <Source
                 :parentClassList="parentClassList"
                 :childrenClassLists="childrenClassLists"
@@ -34,11 +34,7 @@ export default {
     data() {
         return {
             parentClassList: [],
-            childrenClassLists: [
-                ["horizontal-hug-content", "vertical-hug-content"],
-                ["horizontal-hug-content", "vertical-hug-content"],
-                ["horizontal-hug-content", "vertical-hug-content"],
-            ],
+            childrenClassLists: [],
         };
     },
 
@@ -46,12 +42,17 @@ export default {
         parentChange(data) {
             this.parentClassList = data;
         },
+
+        childrenChange(data) {
+            this.childrenClassLists = data;
+        },
     },
 };
 </script>
 
 <style scoped>
 .sandbox {
+    margin-top: 3rem;
     width: 100%;
     display: grid;
     grid-template-areas:

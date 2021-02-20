@@ -15,11 +15,12 @@ export default {
 
     computed: {
         code() {
-            return `<ul class="${this.parentClassList.join(" ")}">
-    <li class="${this.childrenClassLists[0].join(" ")}"></li>
-    <li class="${this.childrenClassLists[1].join(" ")}"></li>
-    <li class="${this.childrenClassLists[2].join(" ")}"></li>
-</ul>`;
+            let code = `<ul class="${this.parentClassList.join(" ")}">\n\r`;
+            for (let i = 0; i < this.childrenClassLists.length; ++i) {
+                code += `    <li class="${this.childrenClassLists[i].join(" ")}"></li>\n\r`;
+            }
+            code += `</ul>`;
+            return code;
         },
     },
 };

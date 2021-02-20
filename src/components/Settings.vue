@@ -29,22 +29,39 @@
             @changeAlignment="setAlignment"
         />
 
-        <select v-model="parent.distribution" @change="emitParent">
-            <option v-for="(distribution, index) in distributions" :key="index">
-                {{ distribution }}
-            </option>
-        </select>
+        <div class="distribution">
+            <select v-model="parent.distribution" @change="emitParent">
+                <option v-for="(distribution, index) in distributions" :key="index">
+                    {{ distribution }}
+                </option>
+            </select>
+        </div>
+
+        <div class="child-sizes frame horizontal space-between">
+            <ChildSize
+                v-for="(child, index) in children"
+                :key="index"
+                :values="child"
+                @sizeChange="
+                    ($e) => {
+                        sizeChange($e, index);
+                    }
+                "
+            />
+        </div>
     </div>
 </template>
 
 <script>
 import Alignment from "./Alignment.vue";
+import ChildSize from "./ChildSize.vue";
 import Icon from "./Icon.vue";
 export default {
     name: "Settings",
 
     components: {
         Alignment,
+        ChildSize,
         Icon,
     },
 
@@ -56,6 +73,11 @@ export default {
                 horizontal: "center",
                 vertical: "top",
             },
+            children: [
+                ["horizontal-hug-content", "vertical-hug-content"],
+                ["horizontal-hug-content", "vertical-fill-container"],
+                ["horizontal-hug-content", "vertical-hug-content"],
+            ],
             distributions: ["space-between", "packed"],
         };
     },
@@ -76,8 +98,14 @@ export default {
             this.emitParent();
         },
 
+        sizeChange(data, index) {
+            this.children[index] = data;
+            this.emitChildren();
+        },
+
         emitParent() {
             const data = [
+                "frame",
                 this.parent.direction,
                 this.parent.distribution,
                 this.parent.horizontal,
@@ -86,10 +114,41 @@ export default {
 
             this.$emit("parentChange", data);
         },
+
+        emitChildren() {
+            const data = this.children;
+
+            this.$emit("childrenChange", data);
+        },
     },
 
     mounted() {
         this.emitParent();
+        this.emitChildren();
     },
 };
 </script>
+
+<style>
+.distribution {
+    padding: 0.5rem;
+}
+
+.child-sizes {
+    position: relative;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.child-sizes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    right: -0.5rem;
+    border-top: 1px solid var(--color-bg);
+}
+
+.child-size {
+    width: 30%;
+}
+</style>

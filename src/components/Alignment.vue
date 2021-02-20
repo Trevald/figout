@@ -109,8 +109,6 @@ export default {
         emitAlignment(data) {
             const horizontal = data.horizontal || this.horizontal;
             const vertical = data.vertical || this.vertical;
-
-            console.log(horizontal, vertical);
             this.$emit("changeAlignment", { horizontal, vertical });
         },
 

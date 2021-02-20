@@ -1,9 +1,11 @@
 <template>
     <div class="box">
-        <ul class="frame" :class="parentClassList.join(' ')">
-            <li :class="childrenClassLists[0].join(' ')"></li>
-            <li :class="childrenClassLists[1].join(' ')"></li>
-            <li :class="childrenClassLists[2].join(' ')"></li>
+        <ul :class="parentClassNames">
+            <li
+                v-for="(childClassNames, index) in childrenClassLists"
+                :key="index"
+                :class="getChildClassNames(index)"
+            ></li>
         </ul>
     </div>
 </template>
@@ -15,6 +17,18 @@ export default {
     props: {
         parentClassList: Array,
         childrenClassLists: Array,
+    },
+
+    computed: {
+        parentClassNames() {
+            return this.parentClassList ? this.parentClassList.join(" ") : "";
+        },
+    },
+
+    methods: {
+        getChildClassNames(index) {
+            return this.childrenClassLists[index];
+        },
     },
 };
 </script>
@@ -35,5 +49,29 @@ ul > li {
 
     border-radius: 2px;
     background-color: var(--color-fg-link);
+}
+
+.horizontal li:nth-child(1) {
+    min-height: min(7vw, 6rem);
+}
+
+.horizontal li:nth-child(2) {
+    min-height: min(11vw, 8rem);
+}
+
+.horizontal li:nth-child(3) {
+    min-height: min(5vw, 4rem);
+}
+
+.vertical li:nth-child(1) {
+    min-width: min(7vw, 6rem);
+}
+
+.vertical li:nth-child(2) {
+    min-width: min(11vw, 8rem);
+}
+
+.vertical li:nth-child(3) {
+    min-width: min(5vw, 4rem);
 }
 </style>
