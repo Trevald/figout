@@ -9,7 +9,7 @@
         </h1>
         <p>
             Human friendly layout helper. Inspired by
-            <a href="#" target="figma">Figmas</a> auto-layout.
+            <a href="https://figma.com" target="figma">Figmas</a> auto-layout.
         </p>
 
         <div class="sandbox">
@@ -24,15 +24,18 @@
             />
         </div>
     </div>
+    <GitHubBanner />
 </template>
 
 <script>
+import GitHubBanner from "./components/GitHubBanner.vue";
 import Result from "./components/Result.vue";
 import Settings from "./components/Settings.vue";
 import Source from "./components/Source.vue";
 
 export default {
     components: {
+        GitHubBanner,
         Result,
         Settings,
         Source,
