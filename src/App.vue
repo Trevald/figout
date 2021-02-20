@@ -10,6 +10,7 @@
         <p>
             Human friendly layout helper. Inspired by
             <a href="https://figma.com" target="figma">Figmas</a> auto-layout.
+            <a href="./figout.css" download>Download CSS</a>
         </p>
 
         <div class="sandbox">
