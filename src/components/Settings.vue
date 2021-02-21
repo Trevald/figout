@@ -75,7 +75,7 @@ export default {
             },
             children: [
                 ["horizontal-hug-content", "vertical-hug-content"],
-                ["horizontal-hug-content", "vertical-fill-container"],
+                ["horizontal-hug-content", "vertical-hug-container"],
                 ["horizontal-hug-content", "vertical-hug-content"],
             ],
             distributions: ["space-between", "packed"],
@@ -146,9 +146,5 @@ export default {
     left: -0.5rem;
     right: -0.5rem;
     border-top: 1px solid var(--color-bg);
-}
-
-.child-size {
-    width: 30%;
 }
 </style>

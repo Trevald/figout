@@ -74,9 +74,15 @@ h1 svg {
     grid-template-areas:
         "result settings"
         "source source";
-    grid-gap: 1.5rem;
+    grid-gap: 0.5rem;
     grid-template-columns: 1fr 15rem;
     grid-template-rows: minmax(400px, auto) auto;
+}
+
+@media (min-width: 30rem) {
+    .sandbox {
+        grid-gap: 1.5rem;
+    }
 }
 
 .sandbox *:nth-child(1) {

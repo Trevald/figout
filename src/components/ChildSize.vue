@@ -1,19 +1,21 @@
 <template>
-    <div class="child-size">
-        <button
-            v-for="(button, index) in buttons"
-            :key="index"
-            type="button"
-            class="no-style"
-            @click="handleClick(button)"
-            @mouseover="setActive(button)"
-            @mouseout="setInactive(button)"
-            :class="getButtonClassNames(button)"
-            :name="button"
-        >
-            <Icon size="small" :name="button" />
-        </button>
-        <div class="box-size" :class="getBoxClassNames"></div>
+    <div class="child-size-wrapper">
+        <div class="child-size">
+            <button
+                v-for="(button, index) in buttons"
+                :key="index"
+                type="button"
+                class="no-style"
+                @click="handleClick(button)"
+                @mouseover="setActive(button)"
+                @mouseout="setInactive(button)"
+                :class="getButtonClassNames(button)"
+                :name="button"
+            >
+                <Icon size="small" :name="button" />
+            </button>
+            <div class="box-size" :class="getBoxClassNames"></div>
+        </div>
     </div>
 </template>
 
@@ -122,9 +124,18 @@ export default {
 </script>
 
 <style scoped>
-.child-size {
-    aspect-ratio: 1 / 1;
+.child-size-wrapper {
     position: relative;
+    padding-bottom: 30%;
+    width: 30%;
+}
+
+.child-size {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -128,11 +128,18 @@ const getAlignmentsFromOption = (option) => {
 
 <style>
 .alignment {
-    padding: 0.5rem;
+    position: relative;
+    padding-bottom: 100%;
+    display: grid;
 }
 
 .alignment > .selector {
-    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    height: calc(100% - 1rem);
     background-color: var(--color-bg-level-2);
     border: 1px solid var(--color-border);
     border-radius: 2px;
@@ -241,7 +248,7 @@ const getAlignmentsFromOption = (option) => {
     align-items: center;
 }
 
-.selector.is-space-between.vertical button:nth-child(3) .icon {
+.selector.is-space-between button:nth-child(3) .icon {
     align-items: flex-end;
 }
 

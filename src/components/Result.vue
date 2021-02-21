@@ -42,13 +42,18 @@ ul {
 }
 
 ul > li {
-    margin: 0.5rem;
+    margin: 0.25rem;
     padding: 0;
-    min-width: min(6vw, 5rem);
+    min-width: min(3vw, 5rem);
     min-height: min(6vw, 5rem);
 
     border-radius: 2px;
     background-color: var(--color-fg-link);
+}
+@media (min-width: 30rem) {
+    ul > li {
+        margin: 0.5rem;
+    }
 }
 
 .horizontal li:nth-child(1) {

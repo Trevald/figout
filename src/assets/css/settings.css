@@ -47,6 +47,10 @@
     --border: 1px solid var(--color-border);
 }
 
+select {
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='%23f4cbc7' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
 /*
  * Use light theme
  */
@@ -105,7 +109,7 @@ html {
 
 body {
     margin: 0;
-    padding: 1rem 3rem;
+    padding: 0;
 
     min-height: 100vh;
     min-height: -webkit-fill-available;
@@ -115,6 +119,7 @@ body {
 }
 
 * {
+    outline-color: var(--color-fg-selected);
     transition: opacity 0.2s linear, background-color 0.2s linear, filter 0.2s linear;
 }
 

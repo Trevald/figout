@@ -74,8 +74,14 @@ button.only-icon.selected {
 
 .container {
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1rem;
     max-width: 52rem;
+}
+
+@media (max-width: 30rem) {
+    .container {
+        padding: 1 rem 2rem;
+    }
 }
 
 .box {
@@ -91,14 +97,21 @@ button.only-icon.selected {
 }
 
 select {
+    appearance: none;
+    -webkit-appearance: none;
     font-size: 1.125rem;
     width: 100%;
     margin: 0rem;
     padding: 0.5rem;
     background-color: var(--color-bg-level-2);
+
     border: var(--border);
     color: var(--color-fg);
     border-radius: 2px;
+
+    background-repeat: no-repeat;
+    background-position: right 0.5rem top 50%;
+    background-size: 1rem 1rem;
 }
 
 .sr-only {
