@@ -7,12 +7,12 @@
     --theme-light-color-bg-level-2: #ffffff;
 
     --theme-light-color-fg: #3c322c;
-    --theme-light-color-fg-muted: #8b866f;
+    --theme-light-color-fg-muted: #a5a294;
 
     --theme-light-color-fg-selected: #8185fc;
     --theme-light-color-fg-link: #343ae5;
 
-    --theme-light-color-border: rgba(0, 0, 0, 0.1);
+    --theme-light-color-border: rgba(0, 0, 0, 0.08);
 
     /*
     * Dark theme
@@ -27,7 +27,7 @@
     --theme-dark-color-fg-selected: #5cc8fa;
     --theme-dark-color-fg-link: #5cc8fa;
 
-    --theme-dark-color-border: rgba(255, 255, 255, 0.1);
+    --theme-dark-color-border: rgba(255, 255, 255, 0.12);
 
     /*
      * Use Dark theme as default
@@ -45,10 +45,6 @@
     --color-border: var(--theme-dark-color-border);
 
     --border: 1px solid var(--color-border);
-}
-
-select {
-    background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='%23f4cbc7' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 }
 
 /*
@@ -70,8 +66,8 @@ select {
         --color-border: var(--theme-light-color-border);
     }
 }
-
-:root[data-theme="light"] {
+*/
+html[data-theme="light"] {
     --color-bg: var(--theme-light-color-bg);
     --color-bg-level-1: var(--theme-light-color-bg-level-1);
     --color-bg-level-2: var(--theme-light-color-bg-level-2);
@@ -84,7 +80,7 @@ select {
 
     --color-border: var(--theme-light-color-border);
 }
-*/
+
 /*
  * Vars
  */
@@ -118,13 +114,18 @@ body {
     color: var(--color-fg);
 }
 
+body,
 * {
     outline-color: var(--color-fg-selected);
-    transition: opacity 0.2s linear, background-color 0.2s linear, filter 0.2s linear;
+    transition: all 0s, opacity 0.2s linear, background-color 0.2s linear, filter 0.2s linear;
 }
 
 *:focus:not(:focus-visible) {
     outline: none !important;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='%23f4cbc7' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 }
 
 /* 

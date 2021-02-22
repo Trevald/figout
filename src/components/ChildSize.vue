@@ -169,12 +169,12 @@ button {
     align-items: center;
     min-height: 12px;
     min-width: 12px;
-    color: var(--color-border);
+    color: var(--color-fg-muted);
 }
 
 button.active {
     color: var(--color-fg-selected);
-    background-color: var(--color-bg-level-2);
+    background-color: var(--color-border);
 }
 
 button[name="chevron-up"],

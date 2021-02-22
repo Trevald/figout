@@ -72,9 +72,9 @@ export default {
         return {
             parent: {
                 direction: "horizontal",
-                distribution: "space-between",
+                distribution: "packed",
                 horizontal: "center",
-                vertical: "top",
+                vertical: "middle",
             },
             children: [
                 ["horizontal-hug-content", "vertical-hug-content"],

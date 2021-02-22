@@ -36,7 +36,7 @@ pre {
     font-family: "IBM Plex Mono", "Fira mono", monospace;
     font-size: 1rem;
     line-height: 2rem;
-    color: var(--color-fg-muted);
+    color: var(--color-fg);
 }
 
 button.only-icon {
@@ -51,7 +51,7 @@ button.only-icon {
     background: transparent;
     border: none;
     box-shadow: none;
-    color: var(--color-fg-muted);
+    color: var(--color-fg);
 
     border: 1px solid transparent;
     border-radius: 2px;

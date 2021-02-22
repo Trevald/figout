@@ -19,10 +19,19 @@
                 :childrenClassLists="childrenClassLists"
             />
             <Settings @parentChange="parentChange" @childrenChange="childrenChange" />
+
             <Source
                 :parentClassList="parentClassList"
                 :childrenClassLists="childrenClassLists"
             />
+        </div>
+        <div class="byline frame horizontal space-between">
+            <p>
+                <a href="https://twitter.com/trevald" target="twitter" title="Follow on Twitter"
+                    >@trevald</a
+                >
+            </p>
+            <ThemeSwitch />
         </div>
     </div>
     <GitHubBanner />
@@ -34,12 +43,15 @@ import Result from "./components/Result.vue";
 import Settings from "./components/Settings.vue";
 import Source from "./components/Source.vue";
 
+import ThemeSwitch from "./components/ThemeSwitch.vue";
+
 export default {
     components: {
         GitHubBanner,
         Result,
         Settings,
         Source,
+        ThemeSwitch,
     },
     data() {
         return {
@@ -103,5 +115,19 @@ h1 svg {
 
 .sandbox *:nth-child(3) {
     grid-area: source;
+    margin-bottom: 1rem;
+}
+
+.byline p {
+    font-size: 1rem;
+}
+
+.byline a {
+    color: var(--color-fg-muted);
+    text-decoration: none;
+}
+
+.byline a:hover {
+    text-decoration: underline;
 }
 </style>
