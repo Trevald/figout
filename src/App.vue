@@ -68,20 +68,28 @@ h1 svg {
 }
 
 .sandbox {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-areas:
-        "result settings"
-        "source source";
+        "result"
+        "settings"
+        "source";
     grid-gap: 0.5rem;
-    grid-template-columns: 1fr 15rem;
-    grid-template-rows: minmax(400px, auto) auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: calc(100vw - 2rem) auto auto;
 }
 
 @media (min-width: 30rem) {
     .sandbox {
+        margin-top: 2rem;
+        grid-template-areas:
+            "result settings"
+            "source source";
         grid-gap: 1.5rem;
+        grid-template-columns: 1fr 15rem;
+        grid-template-rows: minmax(400px, auto) auto;
     }
 }
 

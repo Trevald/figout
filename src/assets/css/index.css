@@ -75,7 +75,7 @@ button.only-icon.selected {
 .container {
     margin: 0 auto;
     padding: 1rem;
-    max-width: 52rem;
+    max-width: min(52rem, 100vw);
 }
 
 @media (max-width: 30rem) {
@@ -88,6 +88,8 @@ button.only-icon.selected {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
 
     padding: 0.5rem;
     background-color: var(--color-bg-level-1);
