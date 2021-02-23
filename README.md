@@ -5,10 +5,10 @@ Human friendly layout helper. Inspired by Figmas auto-layout. [View demo](https:
 
 ```html
 <div class="
-  frame                   <!-- Mandatory, indicates that element shoudl act like a parent -->
+  frame                   <!-- Mandatory, indicates that element should act like a parent -->
   horizontal|vertical     <!-- Mandatory, sets the direction for child elements -->
-  left|center|right       <!-- Optional, horiztonal alignment for children -->
-  top|middle|bottom       <!-- Optional, vertical alignment for children -->
+  left|center|right       <!-- Mandatory, horizontal alignment for children -->
+  top|middle|bottom       <!-- Mandatory, vertical alignment for children -->
 "></div>                       
 ```
 
